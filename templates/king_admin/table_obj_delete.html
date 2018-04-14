@@ -1,0 +1,15 @@
+{%  extends 'king_admin/table_index.html' %}
+{% load tags %}
+
+{% block container %}
+    {% display_obj_related obj %}
+
+    <form method="post">{% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Yes,I'm sure">
+        <a class="btn btn-info" href="{% url 'table_objs' app_name table_name %}">No,Take me back</a>
+    </form>
+{% endblock %}
+
+
+
+
